@@ -1,0 +1,69 @@
+---
+const skills = [
+  'Distributed Systems',
+  'Cloud Architecture',
+  'API Design',
+  'DevOps & CI/CD',
+  'Performance Engineering',
+  'System Design',
+  'Microservices',
+  'Technical Leadership',
+];
+---
+
+<section id="about" class="section">
+  <div class="container">
+    <p class="section-label">// About</p>
+    <h2 class="section-heading">Veteran Engineer & Architect</h2>
+    <div class="about-content">
+      <p>
+        I'm Josh Cooper, a software engineer and architect with deep experience designing
+        and building production systems at scale. I've spent my career solving complex
+        technical challenges across cloud infrastructure, distributed systems, and
+        full-stack application development.
+      </p>
+      <p>
+        Through Cooper Tech LLC, I help companies architect resilient systems, level up
+        their engineering teams, and ship software that performs. Whether you need a
+        fractional architect, a hands-on engineer, or a technical advisor — I bring the
+        same rigor and pragmatism to every engagement.
+      </p>
+    </div>
+    <div class="skills">
+      {skills.map((skill) => (
+        <span class="skill-tag">{skill}</span>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .about-content p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+  }
+
+  .skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+  }
+
+  .skill-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8125rem;
+    color: var(--accent-primary);
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    padding: 0.375rem 0.875rem;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+</style>

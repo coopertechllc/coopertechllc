@@ -1,0 +1,79 @@
+<section class="hero">
+  <div class="container hero-content">
+    <p class="hero-prefix">// Cooper Tech LLC</p>
+    <h1 class="hero-title">Software Architecture<br />&amp; Engineering Consulting</h1>
+    <p class="hero-subtitle">
+      Building robust systems. Solving hard problems.<span class="cursor">_</span>
+    </p>
+    <a href="#contact" class="hero-cta">Let's Talk</a>
+  </div>
+</section>
+
+<style>
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: var(--nav-height);
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .hero-prefix {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    color: var(--accent-primary);
+  }
+
+  .hero-title {
+    max-width: 14ch;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 40ch;
+  }
+
+  .cursor {
+    display: inline-block;
+    color: var(--accent-primary);
+    animation: blink 1s step-end infinite;
+    margin-left: 2px;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  .hero-cta {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--bg-primary);
+    background: var(--accent-primary);
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    transition: background 0.2s, transform 0.2s;
+    width: fit-content;
+    margin-top: 0.5rem;
+  }
+
+  .hero-cta:hover {
+    background: #00e8bb;
+    transform: translateY(-1px);
+    opacity: 1;
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      min-height: 80vh;
+    }
+  }
+</style>

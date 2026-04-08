@@ -1,0 +1,89 @@
+---
+const services = [
+  {
+    icon: '{ }',
+    title: 'Architecture Consulting',
+    description:
+      'System design reviews, architecture planning, and technology selection. Get the foundation right before you build.',
+  },
+  {
+    icon: '> _',
+    title: 'Hands-On Engineering',
+    description:
+      'Production-grade software development, code reviews, and team augmentation. I write code that ships.',
+  },
+  {
+    icon: '/#',
+    title: 'Technical Leadership',
+    description:
+      'Fractional CTO and VP of Engineering services. Team mentoring, process improvement, and engineering culture.',
+  },
+  {
+    icon: '?!',
+    title: 'Code & System Audits',
+    description:
+      'Performance analysis, security reviews, and tech debt assessment. Know where you stand and what to fix.',
+  },
+];
+---
+
+<section id="services" class="section">
+  <div class="container">
+    <p class="section-label">// Services</p>
+    <h2 class="section-heading">What I Do</h2>
+    <p class="section-desc">
+      Consulting services tailored to your team's needs — from strategic architecture
+      to hands-on implementation.
+    </p>
+    <div class="services-grid">
+      {services.map((service) => (
+        <div class="service-card">
+          <span class="service-icon">{service.icon}</span>
+          <h3>{service.title}</h3>
+          <p>{service.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .service-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 2rem;
+    transition: border-color 0.3s;
+  }
+
+  .service-card:hover {
+    border-color: var(--accent-primary);
+  }
+
+  .service-icon {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent-primary);
+    background: var(--bg-tertiary);
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    margin-bottom: 1.25rem;
+  }
+
+  .service-card h3 {
+    margin-bottom: 0.75rem;
+  }
+
+  .service-card p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+</style>

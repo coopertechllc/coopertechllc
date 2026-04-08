@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://coopertech.dev/sitemap-index.xml

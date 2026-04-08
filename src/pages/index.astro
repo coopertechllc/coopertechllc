@@ -1,0 +1,26 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Services from '../components/Services.astro';
+import Ebooks from '../components/Ebooks.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout>
+  <Nav />
+  <main>
+    <Hero />
+    <div class="divider"></div>
+    <About />
+    <div class="divider"></div>
+    <Services />
+    <div class="divider"></div>
+    <Ebooks />
+    <div class="divider"></div>
+    <Contact />
+  </main>
+  <Footer />
+</Layout>

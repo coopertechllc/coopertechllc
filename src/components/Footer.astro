@@ -1,0 +1,64 @@
+---
+const year = new Date().getFullYear();
+const links = [
+  { href: '#about', label: 'About' },
+  { href: '#services', label: 'Services' },
+  { href: '#resources', label: 'Resources' },
+  { href: '#contact', label: 'Contact' },
+];
+---
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <p class="footer-copy">&copy; {year} Cooper Tech LLC. All rights reserved.</p>
+    <nav class="footer-links" aria-label="Footer navigation">
+      {links.map((link) => (
+        <a href={link.href}>{link.label}</a>
+      ))}
+    </nav>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem 0;
+  }
+
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-copy {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .footer-links a {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover {
+    color: var(--accent-primary);
+    opacity: 1;
+  }
+
+  @media (max-width: 768px) {
+    .footer-inner {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>
