@@ -62,5 +62,22 @@ import '../styles/global.css';
   </head>
   <body>
     <slot />
+
+    <!-- Cloudflare Web Analytics -->
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "eb8d4a107a2146949fee35f1b0a9050f"}'></script>
+
+    <!-- Track PDF downloads -->
+    <script>
+      document.addEventListener('click', (e) => {
+        const link = e.target.closest('a[href$=".pdf"]');
+        if (!link) return;
+        const file = link.getAttribute('href').split('/').pop();
+        if (typeof navigator.sendBeacon === 'function') {
+          navigator.sendBeacon(
+            `https://cloudflareinsights.com/cdn-cgi/rum?event=download&file=${encodeURIComponent(file)}`
+          );
+        }
+      });
+    </script>
   </body>
 </html>

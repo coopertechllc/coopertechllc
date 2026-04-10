@@ -1,0 +1,23 @@
+name = "coopertech-analytics"
+main = "src/index.js"
+compatibility_date = "2024-12-01"
+
+# Daily email at 8am EST (1pm UTC)
+[triggers]
+crons = ["0 13 * * *"]
+
+# KV namespace for download tracking
+[[kv_namespaces]]
+binding = "DOWNLOADS"
+id = "REPLACE_WITH_KV_NAMESPACE_ID"
+
+# Route on your domain to intercept /dl/* requests
+# After deploying, add this route in the Cloudflare dashboard:
+# Route: coopertech.cc/dl/*
+# Worker: coopertech-analytics
+
+# Secrets (set via `npx wrangler secret put <NAME>`):
+# RESEND_API_KEY     - from resend.com
+# CF_API_TOKEN       - Cloudflare API token with Analytics Read
+# CF_ACCOUNT_ID      - your Cloudflare account ID
+# NOTIFY_EMAIL       - email to send reports to (josh@coopertech.cc)
