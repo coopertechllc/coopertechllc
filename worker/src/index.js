@@ -101,7 +101,7 @@ async function fetchAnalytics(env, date) {
         variables: {
           accountTag: env.CF_ACCOUNT_ID,
           date: date,
-          siteTag: env.CF_SITE_TAG || '',
+          siteTag: env.CF_SITE_TAG || 'eb8d4a107a2146949fee35f1b0a9050f',
         },
       }),
     });
@@ -181,7 +181,7 @@ function buildEmail(date, analytics, downloads) {
           <thead>
             <tr>
               <th style="padding: 8px 12px; text-align: left; color: #8888a0; font-size: 12px; border-bottom: 1px solid #1e1e2e;">Guide</th>
-              <th style="padding: 8px 12px; text-align: center; color: #8888a0; font-size: 12px; border-bottom: 1px solid #1e1e2e;">Today</th>
+              <th style="padding: 8px 12px; text-align: center; color: #8888a0; font-size: 12px; border-bottom: 1px solid #1e1e2e;">${date}</th>
               <th style="padding: 8px 12px; text-align: center; color: #8888a0; font-size: 12px; border-bottom: 1px solid #1e1e2e;">All Time</th>
             </tr>
           </thead>
