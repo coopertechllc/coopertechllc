@@ -2,9 +2,9 @@ name = "coopertech-analytics"
 main = "src/index.js"
 compatibility_date = "2024-12-01"
 
-# Daily email at 8am EST (1pm UTC)
+# Monthly email at 8am EST (1pm UTC) on the 1st of each month
 [triggers]
-crons = ["0 13 * * *"]
+crons = ["0 13 1 * *"]
 
 # KV namespace for download tracking
 [[kv_namespaces]]
